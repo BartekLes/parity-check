@@ -10,7 +10,8 @@ namespace Parity_Check
     {
         static void Main(string[] args)
         {
-            int number = GetNumber();
+            var number = GetNumber();
+            ParityCheck(number);
 
             int GetNumber()
             {
@@ -26,7 +27,14 @@ namespace Parity_Check
                     return input;
                 }
             }
-
+            void ParityCheck (int numberToCheck)
+            {
+                    if (numberToCheck % 2 == 0)
+                        Console.WriteLine($"Liczba {numberToCheck} jest parzysta");
+                    else
+                        Console.WriteLine($"Liczba {numberToCheck} jest nieparzysta");
+            }
+        
         }
     }
 }
