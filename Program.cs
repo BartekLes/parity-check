@@ -11,13 +11,20 @@ namespace Parity_Check
         static void Main(string[] args)
         {
             int number = GetNumber();
-            Console.WriteLine(number);
 
             int GetNumber()
             {
-                Console.WriteLine("Podaj liczbę");
-                var gettedNumber = int.Parse(Console.ReadLine());
-                return gettedNumber;
+                Console.WriteLine("Podaj liczbę.");
+                while (true)
+                {
+                    if (!int.TryParse(Console.ReadLine(), out int input))
+                    {
+                        Console.WriteLine("Podana wartość nie jest liczbą. Spróbuj ponownie");
+                        continue;
+                    }
+
+                    return input;
+                }
             }
 
         }
